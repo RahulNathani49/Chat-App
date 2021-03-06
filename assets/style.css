@@ -11,7 +11,7 @@ h2{
 
 #mario-chat{
     max-width:100%;
-    margin: 30px auto;
+    margin: 10px auto;
     border: 1px solid #ddd;
     box-shadow: 5px 7px 20px 0px grey;
     border-radius: 2px;
@@ -82,4 +82,12 @@ button{
 }
 button#enterroom{
     padding: 6px 0;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: white;
+    text-decoration: none;
 }
