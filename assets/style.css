@@ -161,7 +161,7 @@ input[id="username"]{
             margin: 0 0 5px 0;
     }
     #chat-window {
-        height: 410px;
+        height: 510px;
         /* overflow: scroll; */
         background: #f9f9f9;
     }
