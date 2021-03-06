@@ -7,10 +7,29 @@ h2{
     padding: 10px 20px;
     color: #575ed8;
 }
-
+.nameprompt{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 2;
+}
+.middle{
+    width: 200px;
+    overflow: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    margin: auto;
+    transform: translate(-50%,-50%);
+}
 #mario-chat{
     max-width:100%;
     margin: 10px auto;
+    
     border: 1px solid #ddd;
     box-shadow: 5px 7px 20px 0px grey;
     border-radius: 2px;
@@ -18,8 +37,11 @@ h2{
 
 #chat-window{
     height: 400px;
-    overflow: scroll;
+    /* overflow: scroll; */
     background: #f9f9f9;
+}
+#output{
+    overflow: scroll;
 }
 
 #output p{
@@ -71,12 +93,16 @@ button{
     border-radius: 0 0 2px 2px;
 }
 #rightpart{
-    float: right;
-    box-shadow: 5px 7px 20px 0px grey;
     width: 200px;
     margin: 10px 0;
-    font-size: 20px!important;
-
+    float: right;
+    box-shadow: 5px 7px 20px 0px grey;
+    font-size: 14px;
+    text-align: center;
+}
+#rightpart h6{
+    font-size: 14px;
+    margin: 0;
 }
 #rightpart input[type="text"]{
     padding: 6px 0;
@@ -93,11 +119,24 @@ a:hover{
     color: white;
     text-decoration: none;
 }
-
+input[name="handle"] {
+    width: 100%;
+    padding: 5px 20px;
+    display: none;
+}
+input[id="username"]{
+    padding: 7px 0;
+    text-align: center;
+}
+#proceed{
+    font-size: 14px;
+    border: 0;
+    padding: 7px 0;
+}
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     #rightpart {
-        float: none;
         box-shadow: 5px 7px 20px 0px grey;
+        float: none;
         width: 200px;
         margin: 10px auto;
         font-size: 15px!important;
@@ -136,7 +175,7 @@ a:hover{
     }
     input[name="message"]{
         float: left;
-        padding: 5px 20px;
+        padding: 10px 20px;
         width: 80%;
     }
     #send{
@@ -145,7 +184,7 @@ a:hover{
         float: left;
         width: 20%;
         font-size: 14px;
-        padding: 6px 12px;
+        padding: 10px 12px;
 
     }
     #output p {

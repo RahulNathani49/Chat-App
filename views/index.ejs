@@ -14,25 +14,39 @@
     <link rel="icon" href="../assets/images/chatlogo.png" type="image/icon type">
   </head>
   <body>
+    <div class="nameprompt" id="nameprompt">
+      <div class="middle">
+        <h6 class="py-2">Enter Your Name</h6>
+        <input type="text" id="username" placeholder="Name" autocomplete="off" required>
+        <button id="proceed">Proceed</button>
+        
+          <h6>Enter Existing Room</h6>
+          <input id="roomcode" type="text" placeholder="Enter Room ID" />
+          <button id="enterroom">Enter</button>
+      </div>
+    </div>
       <div class="container">
           <div class="row">
-              <div class="col-12">          
-                <div id="rightpart">
-                    <input id="roomcode" type="text" placeholder="Enter Room ID" />
-                <button id="enterroom">Enter</button>
-                </div>
-              </div>
+             <div class="col-12">
+              <div id="rightpart">
+               
+
+                <h6 class="py-2">Enter Your Name</h6>
+        <input type="text" id="username" placeholder="Name" autocomplete="off" required>
+        <button id="proceed">Proceed</button>
+            </div>
+             </div>
               <div class="col-12">
                
                 <div id="mario-chat" class="text-center"> 
-                    <h2>This Chatting Room ID</h2>
+                    <h2>Chatting Room ID</h2>
                     <p id="roomid"><%= roomID%></p>
                     <div id="chat-window">
                         <div id="feedback"></div>
                         <div id="output"></div>
                         
                     </div>
-                    <input id="handle" type="text" name="handle" placeholder="Name" />
+                    <input id="handle" type="text" name="handle" placeholder="Name" disabled />
                     <input id="message" type="text" name="message" placeholder="Message" />
                     <button id="send">Send</button>
                 </div>

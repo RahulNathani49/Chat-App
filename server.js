@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 
 app.get('/:room', (req, res) => {
    res.render("index",{roomID:req.params.room})  
+   
 })
 
 app.use('/assets', express.static('assets'));
