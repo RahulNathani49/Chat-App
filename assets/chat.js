@@ -8,29 +8,28 @@ var output = document.getElementById("output");
 var feedback = document.getElementById("feedback");
 var roomid = document.getElementById("roomid").innerHTML;
 var enterroom = document.getElementById("enterroom");
-var proceed = document.getElementById("proceed");
+var proceedname=document.getElementById('proceedname');
 
-proceed.addEventListener('click',function(){
-    var username=document.getElementById("username").value;
+
+console.log(send);
+proceedname.addEventListener('click',function(){
+    var username=document.getElementById('username').value;
     if(username==""){
-        alert("Name Required!");
-    }else{
-        console.log(username);
+        alert("Name cant be Empty!");
+    }
+    else{
         handle=username;
         document.getElementById("rightpart").remove();
     }
     
-})
-
-enterroom.addEventListener('click',function(){
-    var roomcode=document.getElementById("roomcode").value;
-    var redirecturl="/";
-    window.open(redirecturl+roomcode,"_self");
-    document.getElementById("roomcode").value="";
+    
 })
 send.addEventListener('click',function(){
     if(handle==""){
         alert("You need to Provide name to start a Chat!");
+    }
+    else if (message.value=="") {
+        alert("message cant be empty");
     }
     else{
         socket.emit('chat',{
@@ -40,15 +39,7 @@ send.addEventListener('click',function(){
         });
         message.value="";   
     }
-    
-    
-});
-
-// socket.on('connect', function() {
-//     // Connected, let's sign-up for to receive messages for this room
-//     socket.emit('room', roomid);
-//  });
-
+})
 
 message.addEventListener('keypress',function(){
    if(handle!=""){

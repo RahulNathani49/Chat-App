@@ -1,8 +1,7 @@
 require('dotenv').config()
  const express = require("express");
  const socket = require("socket.io");
-
- const {v4 : uuidV4} = require("uuid")
+ const {v4 : uuidV4} = require("uuid");
  var connectroom = "";
  const app = express();
  const server = app.listen(process.env.PORT,function(){
@@ -11,10 +10,13 @@ require('dotenv').config()
 
  app.set('view engine','ejs')
 app.get('/', (req, res) => {
-   res.redirect(`/${uuidV4()}`)
+ 
+   res.render("landing");
 })
-
-app.get('/:room', (req, res) => {
+app.get('/room/',(req,res)=>{
+        res.redirect(`/room/${uuidV4()}`)
+}) 
+app.get('/room/:room', (req, res) => {
    res.render("index",{roomID:req.params.room})  
    
 })
