@@ -8,7 +8,7 @@ var roomid = document.getElementById("roomid").innerHTML;
 var enterroom = document.getElementById("enterroom");
 enterroom.addEventListener('click',function(){
     var roomcode=document.getElementById("roomcode").value;
-    var redirecturl="http://localhost:3000/";
+    var redirecturl="groupchatter.herokuapp.com/";
     window.open(redirecturl+roomcode);
     document.getElementById("roomcode").value="";
 })
