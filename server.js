@@ -1,10 +1,12 @@
+require('dotenv').config()
  const express = require("express");
  const socket = require("socket.io");
+
  const {v4 : uuidV4} = require("uuid")
  var connectroom = "";
  const app = express();
- const server = app.listen("3000",function(){
-    console.log("LISTENING TO PORT 3000");
+ const server = app.listen(process.env.PORT,function(){
+    console.log("LISTENING TO PORT"+process.env.PORT);
  })
 
  app.set('view engine','ejs')

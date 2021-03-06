@@ -19,7 +19,11 @@ send.addEventListener('click',function(){
         roomid:roomid
     });
     message.value="";   
+    console.log(output.scrollHeight);
+   
+
 });
+
 // socket.on('connect', function() {
 //     // Connected, let's sign-up for to receive messages for this room
 //     socket.emit('room', roomid);
@@ -36,7 +40,9 @@ message.addEventListener('keypress',function(){
 socket.on('chat',function(data){
     if(roomid==data.roomid){
     feedback.innerHTML=""
-    output.innerHTML += '<p class="text-left"><strong>'+data.handle+' : </strong>'+data.message+'</p>'; 
+    output.innerHTML += '<p class="text-left"><strong>'+data.handle+' : </strong>'+data.message+'</p>';  
+    var lastelement = output.lastElementChild;
+    lastelement.scrollIntoView();
 }
 });
 
