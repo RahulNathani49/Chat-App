@@ -1,6 +1,7 @@
-body{
+html,body{
     font-family: verdana;
-    
+    height: 100%;
+    width: 100%;
 }
 
 h2{
@@ -18,7 +19,7 @@ h2{
     z-index: 2;
 }
 .middle{
-    width: 200px;
+    width: 240px;
     overflow: auto;
     position: absolute;
     top: 50%;
@@ -29,10 +30,8 @@ h2{
 }
 #mario-chat{
     max-width:100%;
-    margin: 10px auto;
+    
     height: 100%;
-    border: 1px solid #ddd;
-    box-shadow: 5px 7px 20px 0px grey;
     border-radius: 2px;
 }
 
@@ -45,10 +44,16 @@ h2{
 
 
 #output p{
-    padding: 14px 0px;
-    margin: 0 20px;
-    border-bottom: 1px solid #e9e9e9;
-    color: #555;
+    background: #F44336;
+    color: white;
+    padding: 10.6666666667px;
+    min-height: 42.6666666667px;
+    width: 65%;
+    margin: 0 10.6666666667px;
+    box-shadow: 1px 2px 7px 0px rgb(50 50 50 / 30%);
+    border-radius: 2px;
+    font-weight: 300;
+    margin: 10px;
 }
 
 #feedback p{
@@ -57,9 +62,7 @@ h2{
     margin: 0 20px;
 }
 
-#output strong{
-    color: #575ed8;
-}
+
 
 label{
     box-sizing: border-box;
@@ -75,7 +78,7 @@ input{
     display: block;
     width: 100%;
     background: #fff;
-    border-bottom: 1px solid #eee;
+    
     font-family: verdana;
     font-size: 13px;
 
@@ -96,17 +99,30 @@ button{
     width: 200px;
     margin: 10px 0;
     float: right;
-    box-shadow: 5px 7px 20px 0px grey;
     font-size: 14px;
     text-align: center;
+    background-color: #F44336
 }
 #rightpart h6{
     font-size: 14px;
     margin: 0;
 }
 #rightpart input[type="text"]{
-    padding: 6px 0;
+    padding: 18px 5px;
     text-align: center;
+    float: left;
+    width: 70%;
+    
+}
+#proceedname{
+    width: 30%;
+    float: left;
+    background: #575ed8;
+    color: #fff;
+    font-size: 10px;
+    border: 0;
+    padding: 11px 0;
+    border-radius: 0 0 2px 2px;
 }
 button#enterroom{
     padding: 6px 0;
@@ -131,22 +147,32 @@ input[id="username"]{
 #proceed{
     font-size: 14px;
     border: 0;
-    padding: 7px 0;
+    padding: 14px 0;
+    background-color: #F44336;
+    box-shadow: 1px 2px 7px 0px rgb(50 50 50 / 30%);
+}
+button:focus{
+    outline: none;
+}
+button#enterroom {
+    padding: 14px 0;
+    background-color: #F44336;
+    box-shadow: 1px 2px 7px 0px rgb(256 256 256 / 30%);
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     #rightpart {
-        box-shadow: 5px 7px 20px 0px grey;
+        
         float: none;
         width: 200px;
         margin: 10px auto;
         font-size: 15px!important;
     }
     button#enterroom {
-        padding: 6px 0;
+        padding: 14px 0;
         font-size: 15px;
     }
     #rightpart input[type="text"] {
-        padding: 6px 0;
+        padding: 18px 0;
         text-align: center;
         height: 30px;
     }
@@ -156,18 +182,21 @@ input[id="username"]{
     }
     #roomid{
             margin-top: 0;
-            margin-bottom: 1rem;
+            background-color: #F44336; 
             font-size: 13px;
-            margin: 0 0 5px 0;
+           margin: 0;
+           padding: 5px;
     }
     #chat-window {
-        height: 510px;
-        /* overflow: scroll; */
+        height: calc(100% - 61px);
+        /* overflow: scroll; */ 
         background: #f9f9f9;
     }
+    .inside{
+        height: calc(100% - 64px);
+    }
     #output{
-        overflow: scroll;
-        
+        overflow: scroll;  
     }
     input[name="handle"]{
         width: 100%;
@@ -179,20 +208,30 @@ input[id="username"]{
         width: 80%;
     }
     #send{
+        float: left;     
         float: left;
-        width: 20%;      
-        float: left;
-        width: 20%;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-left: 14px;
         font-size: 14px;
         padding: 10px 12px;
+        background: #F44336;
 
     }
     #output p {
-        padding: 10px 0px;
-        margin: 0 5px;
         font-size: 14px;
-        border-bottom: 1px solid #e9e9e9;
-        color: #555;
+        background: #F44336;
+        color: white;
+        padding: 10.6666666667px;
+        min-height: 42.6666666667px;
+        width: 65%;
+        margin: 0 10.6666666667px;
+        box-shadow: 1px 2px 7px 0px rgb(50 50 50 / 30%);
+        border-radius: 2px;
+        font-weight: 300;
+        margin: 10px;
+        color: white;
     }
     #feedback{
         position: sticky;

@@ -15,28 +15,36 @@
   </head>
   <body>
     
-      <div class="container">
-          <div class="row">
-             <div class="col-12">
+      <div class="container h-100">
+          <div class="row h-100">
+             <div class="col-12 p-0" style="background-color:#F44336;color: white;">
               <div id="rightpart">
                 <h6 class="py-2">Enter Your Name </h6>
         <input type="text" id="username" placeholder="Name" autocomplete="off" required>
         <button id="proceedname">Proceed</button>
             </div>
              </div>
-              <div class="col-12">
+              <div class="col-12 w-100 h-100" style="padding: 0;">
                
                 <div id="mario-chat" class="text-center"> 
-                    <h2>Chatting Room ID</h2>
-                    <p id="roomid"><%= roomID%></p>
-                    <div id="chat-window">
+                  <div class="overflow-auto">
+                    <h2 style="background-color: #F44336;color: white;">Chatting Room ID</h2>
+                    <p id="roomid" style="color: white;"><%= roomID%></p>
+                  </div>
+                    <div class="inside">
+                      <div id="chat-window">
                         <div id="feedback"></div>
                         <div id="output"></div>
                         
                     </div>
                     <input id="handle" type="text" name="handle" placeholder="Name" disabled />
-                    <input id="message" type="text" name="message" placeholder="Message" />
-                    <button id="send">Send</button>
+                    <div class="overflow-auto p-2">
+                      <input id="message" type="text" name="message" placeholder="Message" />
+                      <button id="send"><img src="../assets/images/send_icon.png" class="w-100" alt=""></button>
+                    </div>
+                    </div> 
+                    
+                    
                 </div>
               </div>
               </div>

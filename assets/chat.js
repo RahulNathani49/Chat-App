@@ -1,5 +1,3 @@
-
-
 const socket = io.connect();
 var message = document.getElementById("message");
 var handle = document.getElementById("handle").value;
@@ -9,7 +7,6 @@ var feedback = document.getElementById("feedback");
 var roomid = document.getElementById("roomid").innerHTML;
 var enterroom = document.getElementById("enterroom");
 var proceedname=document.getElementById('proceedname');
-
 
 console.log(send);
 proceedname.addEventListener('click',function(){
@@ -53,8 +50,21 @@ message.addEventListener('keypress',function(){
 socket.on('chat',function(data){
     if(roomid==data.roomid){
     feedback.innerHTML="";
-    output.innerHTML += '<p class="text-left"><strong>'+data.handle+' : </strong>'+data.message+'</p>';  
-    var lastelement = output.lastElementChild;
+    output.innerHTML += '<p class="text-left"><strong>'+data.handle+'</strong> : '+data.message+'</p>';  
+    var lastelement = output.lastElementChild; 
+    console.log(lastelement);
+   var strong = lastelement.childNodes[0].innerHTML;
+ 
+  
+   if(strong==handle){
+    lastelement.classList.add("float-right");
+    lastelement.style.background="#ad3636";
+    lastelement.childNodes[0].innerHTML="You";
+   
+   }
+   else{
+    lastelement.classList.add("float-left");
+   }
     lastelement.scrollIntoView();
 }
 });
