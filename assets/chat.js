@@ -22,11 +22,17 @@ proceedname.addEventListener('click',function(){
     
 })
 send.addEventListener('click',function(){
+    messagev = message.value;   
+    var spacelen = messagev.match(/ /g).length;
     if(handle==""){
         alert("You need to Provide name to start a Chat!");
     }
     else if (message.value=="") {
         alert("message cant be empty");
+    }
+    else if(spacelen === messagev.length){
+        alert("Blank Messages are no allowed");
+        document.getElementById("message").value="";
     }
     else{
         socket.emit('chat',{
