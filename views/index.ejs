@@ -11,6 +11,7 @@
      user-scalable=0' >
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="../assets/style.css" rel="stylesheet" />
     <link rel="icon" href="../assets/images/chatlogo.png" type="image/icon type">
@@ -22,17 +23,28 @@
              <div class="col-12 p-0" style="background-color: #2a2f32;color: white;">
               <div id="rightpart" >
                 <h6 class="py-2">Enter Your Name </h6>
-        <input type="text" id="username" placeholder="Name" autocomplete="off" required>
-        <button id="proceedname">Proceed</button>
+                <input type="text" id="username" placeholder="Name" autocomplete="off" required>
+                <button id="proceedname">Proceed</button>
             </div>
+            
              </div>
               <div class="col-12 w-100 h-100" style="padding: 0;">
                
                 <div id="mario-chat" class="text-center"> 
-                  <div class="overflow-auto" style="background-color: #2a2f32;">
-                    <h2 style="color: white;">Chatting Room ID</h2>
-                    <p id="roomid" style="color: white;"><%= roomID%></p>
+                  <div class="overflow-auto infohead" style="background-color: #2a2f32;">
+                    <div class="w-50 float-left chatid">
+                      <h2 style="color: white;padding: 20px 0;">Chatting Room ID</h2>
+                    </div>
+                   
+                    <div class="w-50 float-left">
+                      <div id="golive" class="float-right">
+                        <i class="fas fa-video" style="color: white;float: left;"></i>
+                      </div>
+                    </div>
+                    
+                    <p id="roomid" style="color: white;clear: both;"><%= roomID%></p>
                   </div>
+                  
                     <div class="inside">
                       <div id="chat-window">
                         <div id="feedback"></div>

@@ -100,7 +100,7 @@ button{
 }
 #rightpart{
     width: 200px;
-    margin: 10px 0;
+    margin: 10px 10px;
     float: right;
     font-size: 14px;
     text-align: center;
@@ -111,7 +111,7 @@ button{
     margin: 0;
 }
 #rightpart input[type="text"]{
-    padding: 18px 5px;
+    padding: 10px 5px;
     text-align: center;
     float: left;
     width: 70%;
@@ -162,6 +162,35 @@ button#enterroom {
     background-color: #056162;
     box-shadow: 1px 2px 7px 0px rgb(256 256 256 / 30%);
 }
+#golive{
+    float: left;
+    padding: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #056162;
+    cursor: pointer;
+}
+.chatid{
+    text-align: left;
+}
+.infohead{
+    text-align: left;
+    padding: 0 20px;
+}
+#send{
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 14px;
+    font-size: 14px;
+    padding: 10px 12px;
+    background: #056162;
+}
+#message{
+    float: left;
+    width: 90%;
+}
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     #rightpart {
         float: none;
@@ -184,9 +213,9 @@ button#enterroom {
     }
     #roomid{
             margin-top: 0;
-            font-size: 13px;
+            font-size: 12px;
            margin: 0;
-           padding: 5px;
+           padding: 5px 0;
     }
     #chat-window {
         height: calc(100% - 57px);
@@ -194,7 +223,7 @@ button#enterroom {
         
     }
     .inside{
-        height: calc(100% - 64px);
+        height: calc(100% - 80px);
     }
     #output{
         overflow: scroll;  
@@ -245,6 +274,10 @@ button#enterroom {
         padding: 10px 0px;
         margin: 0 20px;
         font-size: 12px;
+    }
+    #message{
+        float: left;
+        width: 80%;
     }
 }
 
