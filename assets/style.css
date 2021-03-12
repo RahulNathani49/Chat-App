@@ -218,7 +218,7 @@ button#enterroom {
            padding: 5px 0;
     }
     #chat-window {
-        height: calc(100% - 57px);
+        height: calc(100% - 56px);
         /* overflow: scroll; */ 
         
     }
