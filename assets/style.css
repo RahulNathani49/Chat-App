@@ -30,7 +30,6 @@ h2{
 }
 #mario-chat{
     max-width:100%;
-    
     height: 100%;
     border-radius: 2px;
 }
@@ -38,13 +37,17 @@ h2{
 #chat-window{
     height: 400px;
     overflow: scroll;
-    background: #f9f9f9;
+    background-color: #e7e7e7;  
+    background-image: url(../assets/images/chat-bg.png);
+    background-position: top;
+    background-size: cover;
+    background-repeat: repeat;
     overflow-x: hidden;
 }
 
 
 #output p{
-    background: #F44336;
+    background: #0E1920;
     color: white;
     padding: 10.6666666667px;
     min-height: 42.6666666667px;
@@ -101,7 +104,7 @@ button{
     float: right;
     font-size: 14px;
     text-align: center;
-    background-color: #F44336
+    background-color:#056162;
 }
 #rightpart h6{
     font-size: 14px;
@@ -148,7 +151,7 @@ input[id="username"]{
     font-size: 14px;
     border: 0;
     padding: 14px 0;
-    background-color: #F44336;
+    background-color: #056162;
     box-shadow: 1px 2px 7px 0px rgb(50 50 50 / 30%);
 }
 button:focus{
@@ -156,12 +159,11 @@ button:focus{
 }
 button#enterroom {
     padding: 14px 0;
-    background-color: #F44336;
+    background-color: #056162;
     box-shadow: 1px 2px 7px 0px rgb(256 256 256 / 30%);
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     #rightpart {
-        
         float: none;
         width: 200px;
         margin: 10px auto;
@@ -182,15 +184,14 @@ button#enterroom {
     }
     #roomid{
             margin-top: 0;
-            background-color: #F44336; 
             font-size: 13px;
            margin: 0;
            padding: 5px;
     }
     #chat-window {
-        height: calc(100% - 61px);
+        height: calc(100% - 57px);
         /* overflow: scroll; */ 
-        background: #f9f9f9;
+        
     }
     .inside{
         height: calc(100% - 64px);
@@ -210,25 +211,25 @@ button#enterroom {
     #send{
         float: left;     
         float: left;
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         margin-left: 14px;
         font-size: 14px;
         padding: 10px 12px;
-        background: #F44336;
+        background: #056162;
 
     }
     #output p {
         font-size: 14px;
-        background: #F44336;
+        background: #0E1920;
         color: white;
         padding: 10.6666666667px;
         min-height: 42.6666666667px;
         width: 65%;
         margin: 0 10.6666666667px;
         box-shadow: 1px 2px 7px 0px rgb(50 50 50 / 30%);
-        border-radius: 2px;
+        border-radius: 10px;
         font-weight: 300;
         margin: 10px;
         color: white;

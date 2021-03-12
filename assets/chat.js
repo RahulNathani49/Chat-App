@@ -47,12 +47,12 @@ send.addEventListener('click',function(){
 })
 
 message.addEventListener('keypress',function(){
-   if(handle!=""){
+   
     socket.emit('typing',{
         handle:handle,
         roomid:roomid
     });
-   } 
+   
 })
 
 socket.on('chat',function(data){
@@ -66,7 +66,7 @@ socket.on('chat',function(data){
   
    if(strong==handle){
     lastelement.classList.add("float-right");
-    lastelement.style.background="#ad3636";
+    lastelement.style.background="#056162";
     lastelement.childNodes[0].innerHTML="You";
    
    }
