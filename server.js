@@ -17,8 +17,10 @@ app.get('/room/',(req,res)=>{
         res.redirect(`/room/${uuidV4()}`)
 }) 
 app.get('/room/:room', (req, res) => {
-   res.render("index",{roomID:req.params.room})  
-   
+   res.render("index",{roomID:req.params.room})    
+})
+app.get('/video/:videoid', (req, res) => {
+   res.render("videoroom",{videoID:req.params.videoid})    
 })
 
 app.use('/assets', express.static('assets'));
@@ -28,9 +30,10 @@ app.use('/assets', express.static('assets'));
 
    console.log("Made Connection");
    
-//    socket.on('room', function(room) {      
-//       socket.join(connectroom);
-//   });
+   socket.on('join-room',(Room_Id,userid)=>{
+      socket.join(Room_Id)
+      socket.to(Room_Id).broadcast.emit('user-connected',userid)
+   })
 
    socket.on('chat',function(data){ 
       connectroom = data.roomid;  
@@ -42,6 +45,8 @@ app.use('/assets', express.static('assets'));
       connectroom=data.roomid;
      socket.broadcast.emit('typing',data)
    });
+
+ 
 
  });
 

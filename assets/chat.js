@@ -7,8 +7,18 @@ var feedback = document.getElementById("feedback");
 var roomid = document.getElementById("roomid").innerHTML;
 var enterroom = document.getElementById("enterroom");
 var proceedname=document.getElementById('proceedname');
+var golive = document.getElementById("golive");
 
 console.log(send);
+
+
+golive.addEventListener('click',function(){
+    var code = document.getElementById("roomid").innerHTML;
+    var redirecturl="/video/";
+    window.open(redirecturl+code,"_self");
+})
+
+
 proceedname.addEventListener('click',function(){
     var username=document.getElementById('username').value;
     if(username==""){

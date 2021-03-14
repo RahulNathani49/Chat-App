@@ -191,6 +191,12 @@ button#enterroom {
     float: left;
     width: 90%;
 }
+video{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    
+}
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     #rightpart {
         float: none;
