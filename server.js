@@ -45,8 +45,5 @@ app.use('/assets', express.static('assets'));
       connectroom=data.roomid;
      socket.broadcast.emit('typing',data)
    });
-
- 
-
  });
 

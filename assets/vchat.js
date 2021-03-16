@@ -1,7 +1,7 @@
 const socket = io.connect();
 const videogrid = document.getElementById('video-grid');
 const myPeer = new Peer(undefined,{
-    host:'localhost',
+    host:'groupchatter.herokuapp.com',
     port:'9000'
 })
 const myVideo = document.createElement('video');
