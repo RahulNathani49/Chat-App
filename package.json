@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
-    "postinstall":"peerjs --port 9000"
+    "startpeer":"peerjs --port 9000"
   },
   "author": "RAHUl",
   "license": "ISC",
