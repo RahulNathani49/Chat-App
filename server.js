@@ -8,7 +8,11 @@ require('dotenv').config()
  const server = app.listen(process.env.PORT,function(){
     console.log("LISTENING TO PORT"+process.env.PORT);
  })
- 
+ const { ExpressPeerServer } = require('peer');
+ const peerServer = ExpressPeerServer(server, {
+   path: '/myapp'
+ });
+ app.use('/peerjs', peerServer);
 
  app.set('view engine','ejs')
 app.get('/', (req, res) => {
