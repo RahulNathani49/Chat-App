@@ -3,7 +3,8 @@ const videogrid = document.getElementById('video-grid');
 const myPeer = new Peer(undefined,{
     secure: true,
     host:'groupchatter.herokuapp.com',
-    port:9000
+    port:9000,
+    path:'/myapp'
 })
 const myVideo = document.createElement('video');
 myVideo.muted=true;
