@@ -8,6 +8,7 @@ require('dotenv').config()
     console.log("LISTENING TO PORT"+process.env.PORT);
  })
 
+
  app.set('view engine','ejs')
 app.get('/', (req, res) => {
  

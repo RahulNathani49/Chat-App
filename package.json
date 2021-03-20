@@ -2,11 +2,12 @@
   "name": "chat-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "startpeer":"peerjs --port 9000 --host groupchatter.herokuapp.com"
+    "startpeer":"peerjs --port 9000 --host groupchatter.herokuapp.com",
+    "start": "node server && npm run startpeer"
+    
   },
   "author": "RAHUl",
   "license": "ISC",
