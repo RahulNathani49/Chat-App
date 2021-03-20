@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "startpeer":"peerjs --port 9000 --host groupchatter.herokuapp.com",
+    "startpeer":"peerjs --port 9000 --host localhost",
     "start": "node server && npm run startpeer"
     
   },
