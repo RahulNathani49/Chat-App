@@ -2,16 +2,11 @@ require('dotenv').config()
  const express = require("express");
  const socket = require("socket.io");
  const {v4 : uuidV4} = require("uuid");
-
  var connectroom = "";
  const app = express();
  const server = app.listen(process.env.PORT,function(){
     console.log("LISTENING TO PORT"+process.env.PORT);
- });
- const { PeerServer } = require('peer');
- 
-// const peerServer = PeerServer({ port: 9000, path: '/myapp' });
-
+ })
 
  app.set('view engine','ejs')
 app.get('/', (req, res) => {
@@ -25,19 +20,23 @@ app.get('/room/:room', (req, res) => {
    res.render("index",{roomID:req.params.room})    
 })
 app.get('/video/:videoid', (req, res) => {
-   res.render("videoroom",{videoID:req.params.videoid})    
+   res.render("videoroom",{videoID:req.params.videoid})   
 })
 
 app.use('/assets', express.static('assets'));
 
  const io = socket(server);
- io.on("connection",function(socket){
+ io.on("connection",socket=>{
 
    console.log("Made Connection");
    
    socket.on('join-room',(Room_Id,userid)=>{
+      console.log(Room_Id);
       socket.join(Room_Id)
       socket.to(Room_Id).broadcast.emit('user-connected',userid)
+      socket.on('disconnect',()=>{
+         socket.to(Room_Id).broadcast.emit('user-disconnected',userid)
+      })
    })
 
    socket.on('chat',function(data){ 

@@ -1,19 +1,18 @@
 const socket = io.connect();
 const videogrid = document.getElementById('video-grid');
 const myPeer = new Peer(undefined,{
-    secure: false,
     host:'groupchatter.herokuapp.com',
-    port:9000,
+    port:'9000'
 })
 const myVideo = document.createElement('video');
 myVideo.muted=true;
-
+const peers={};
 navigator.mediaDevices.getUserMedia({
     video:true,
     audio:true
 }).then(stream=>{
     addvideostream(myVideo,stream);
-
+    
     myPeer.on('call',call=>{
         call.answer(stream); 
         const video = document.createElement('video');
@@ -26,7 +25,11 @@ navigator.mediaDevices.getUserMedia({
         console.log("New User : "+userid);
     })
 })
-
+    socket.on('user-disconnected',userid=>{
+        if(peers[userid]) {
+            peers[userid].close()
+        }    
+    })
 myPeer.on('open',id=>{ 
     socket.emit('join-room',Room_Id,id);
 })
@@ -43,10 +46,10 @@ function connecttonewuser(userid,stream){
     const videonew = document.createElement('video');
   
     call.on('stream',uservideostream=>{
-        
         addvideostream(videonew,uservideostream);
-    });
+    })
     call.on('close',()=>{
-        video.remove() ;
-    });
+        videonew.remove()
+    })
+     peers[userid]=call;
 }
